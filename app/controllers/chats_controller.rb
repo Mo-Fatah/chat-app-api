@@ -33,7 +33,6 @@ class ChatsController < ApplicationController
     end 
   end
 
-  # TODO: should be show messages 
   def show
     puts params[:id]
     application = Application.find{|app| app.token == params[:application_id]}
@@ -57,11 +56,13 @@ class ChatsController < ApplicationController
       chat.messages << message
       chat.messages_count += 1
       chat.save
-      render json: chat
+      head :accepted
     end
   end
 
+  # TODO
   def search_messages
-    render json: params
+    result = Chat.search("message")
+    render json: result
   end
 end

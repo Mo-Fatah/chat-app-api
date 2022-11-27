@@ -30,5 +30,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_190346) do
     t.index ["application_id"], name: "index_chats_on_application_id"
   end
 
-  add_foreign_key "chats", "applications"
 end
