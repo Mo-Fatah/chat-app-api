@@ -59,6 +59,9 @@ class ChatsController < ApplicationController
       chat.save
       render json: chat
     end
+  end
 
+  def search_messages
+    render json: params
   end
 end
